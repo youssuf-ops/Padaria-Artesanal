@@ -1,0 +1,142 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: arias, sans-serif;
+  color: #333;
+  /* Manter a cor de fundo do body, se desejar */
+  background-color: bisque;
+}
+
+/* 1. CONTAINER PRINCIPAL: HERO (FLEXBOX) */
+/* Este é o contêiner que divide o ecrã em duas colunas */
+.hero {
+  display: flex; /* Habilita o Flexbox para as colunas */
+  height: 100vh; /* Ocupa a altura total do ecrã */
+  width: 100%;
+  position: relative; /* Necessário para posicionar o menu */
+}
+
+/* 2. IMAGEM: COLUNA ESQUERDA (50%) */
+/* Usa a tag <img> com a classe .hero-bg-image */
+.hero-bg-image {
+  width: 50%; /* Ocupa metade da largura do ecrã */
+  height: 100%;
+  object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
+  object-position: center;
+}
+
+/* 3. CONTEÚDO PRINCIPAL: COLUNA DIREITA (50%) */
+.hero-content {
+  /* Não precisa de .container aqui, pois a largura é definida pelo .hero-content */
+  width: 50%; /* Ocupa a outra metade da largura do ecrã */
+
+  /* Cor de fundo da coluna direita - adapte à sua preferência */
+  background-color: #f7e9d7;
+
+  /* Centraliza o conteúdo verticalmente */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
+
+  /* Espaçamento interno */
+  padding: 60px 85px;
+  align-items: flex-start;
+}
+
+/* 4. ESTILOS DO CONTEÚDO (H1, P) */
+.hero-content h1 {
+  color: black;
+  font-size: 3rem;
+  max-width: 600px;
+  margin: 0;
+}
+
+.hero-content p {
+  color: black;
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem;
+  max-width: 500px;
+}
+
+/* 5. NAVEGAÇÃO (AJUSTADA PARA FICAR SOBREPOSTA) */
+
+/* O .cabecalho agora só serve para posicionar o menu absoluto */
+.cabecalho {
+  position: absolute;
+  top: 30px; /* Distância do topo */
+  right: 30px; /* Distância da direita */
+  z-index: 10;
+  /* Remove a cor de fundo 'brown' para que fique transparente como na imagem */
+  /* Remova o display: flex; e padding: 15px 30px; */
+
+  /* Cor de fundo dos links (o tom avermelhado) */
+  /*   background: #d17575; */
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+.lista-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 12px;
+}
+
+.lista-menu a {
+  color: black; /* Cor do texto do menu */
+  text-decoration: none; /* o que tira o sublinhado */
+  font-size: 1.2rem;
+  /* Ajustes para o estilo de link flutuante (se necessário) */
+}
+
+a:hover {
+  color: #e78d06;
+}
+
+/* 6. ESTILOS DO BOTÃO */
+.btn {
+  background: #e78d06; /* Cor do botão (ajustada para corresponder à imagem) */
+  color: #fff;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn:hover {
+  background: #a08c69; /* Tom mais escuro no hover */
+}
+
+/* 7. MEDIA QUERIES (Ajuste para ecrãs menores) */
+
+@media (max-width: 1000px) {
+  /* Mudar para layout de coluna em ecrãs pequenos */
+  .hero {
+    flex-direction: column;
+    height: auto; /* Permite que a altura se ajuste ao conteúdo */
+  }
+
+  .hero-bg-image,
+  .hero-content {
+    width: 100%; /* Ocupa a largura total */
+    height: 50vh; /* Dá altura fixa à imagem em modo coluna */
+  }
+
+  .hero-content {
+    height: auto; /* A altura do conteúdo adapta-se ao seu texto */
+  }
+
+  .cabecalho {
+    /* Centraliza o menu no topo em ecrãs pequenos */
+    right: 50%;
+    transform: translateX(50%);
+  }
+}

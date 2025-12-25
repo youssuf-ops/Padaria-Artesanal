@@ -1,0 +1,165 @@
+:root {
+  --background: #30343f;
+  --primary: #1e2749;
+  --secondary: #273469;
+  --text-realce: #fb8500;
+  --text: #aaa;
+  --focus: #ff9f1c;
+  --safe: #45a049;
+  --input-background: #444;
+  --input-border: #555;
+  --button-background: #4caf50;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: arias, sans-serif;
+  /* 1.Especifica o caminho para a sua imagem */
+  background-image: url("../assets/board.jpg");
+
+  /* 2.Garante que a imagem cobre toda a área do body */
+  background-size: cover;
+
+  /* 3.Impede que a imagem não se repita */
+  background-repeat: no-repeat;
+
+  /* 4.Fixa a imagem no lugar enquanto o resto da página rola (opcional) */
+  background-attachment: fixed;
+
+  /* 5.Garante que o body ocupa pelo menos toda a altura da janela */
+  min-height: 100vh;
+
+  /* Estilos para centralizar o conteúdo (o seu container) */
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center; /* centraliza verticalmente */
+  flex-direction: column; /* Muito Importante define a direcao principal como coluna (vertical) */
+}
+
+.container {
+  font-size: 30px;
+  /* Removemos o padding que causava o movimento
+  usando o height/min-heigth para reservar espaço */
+  min-height: 100px;
+
+  width: 80%; /* Para limitar a largura */
+  text-align: center; /* Centraliza o texto */
+
+  /* Centraliza o h1 dentro do container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* impede que o texto quebre a linha, mesmo que seja mais longo */
+/*  .container h1 white-space: nowrap; */
+
+.title {
+  color: rgb(255, 42, 0);
+  cursor: pointer;
+}
+
+/* Itens do menu - inicio, sobre nos e serviços */
+.cabecalho {
+  position: absolute;
+  top: 30px; /* Distãncia do topo */
+  right: 30px; /* Distãncia da direita */
+  padding: 10px 15px;
+}
+
+.lista-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 12px;
+}
+
+.lista-menu a {
+  color: black; /* cor do texto do menu */
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+a:hover {
+  color: #e78d06;
+}
+
+/* Estilização do Formulário */
+
+#meuFormulario {
+  width: 300px; /* Defina a largura para centrar melhor */
+  padding: 20px;
+  background-color: #f7e9d7; /* fundo claro para o formulario */
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0.1);
+
+  /* faz com que o formulario fique abaixo e distante da frase */
+  margin-top: 130px;
+}
+
+/* centraliza os botões ou outros elementos dentro do formulário */
+
+#meuFormulario input[type="text"],
+#meuFormulario input[type="tel"] {
+  margin-bottom: 20px; /* cria espaço abaixo de cada input */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 90%; /* IMPORTANTE: Garante que o campo tenha largura para a borda aparecer */
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  outline: none; /* Remove a linha azul ao clicar */
+  font-size: 1rem;
+  transition: border-color 0.3s ease; /* transição suave */
+}
+
+/* Efeito focus usando as variáveis */
+
+#meuFormulario input[type="text"]:focus,
+#meuFormulario input[type="tel"]:focus {
+  border-color: var(--focus);
+  /* Adiciona um brilho suave ao redor da caixa */
+  box-shadow: 0 0 8px rgba(255, 159, 28, 0.5);
+  /* Opcional: borda um pouco mais grossa */
+  border-width: 2px;
+}
+
+#meuFormulario input[type="submit"] {
+  display: block; /* O botão ocupa toda largura */
+  margin-top: 15px;
+  margin-left: auto; /* centraliza o botão se nao for block */
+  margin-right: auto;
+  background: #e78d06;
+  color: #fff;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+#meuFormulario input[type="submit"]:hover {
+  background: #a08c69;
+}
+
+/*  prefiro da uma margem inferior a cada input */
+
+#meuFormulario label {
+  display: block;
+  /*text-align: center;   */ /* Centraliza o texto "Nome" e "e-mail" */
+  margin-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: arial, sans-serif;
+  font-weight: 500;
+}

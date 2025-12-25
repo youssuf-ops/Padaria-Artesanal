@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+    <link rel="stylesheet" href="css/contacto.css" />
+  </head>
+
+  <body>
+    <header class="head">
+      <nav class="cabecalho">
+        <ul class="lista-menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="serviços.html">Serviços</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <form id="meuFormulario">
+      <label for="nome">Nome:</label>
+      <input
+        type="text"
+        id="nome"
+        placeholder="Seu nome aqui"
+        name="nome"
+        required
+      />
+      <div id="nome-error" style="color: red; display: none">
+        Por favor, insira seu nome.
+      </div>
+      <br />
+      <label for="phone">Seu Contacto:</label>
+      <input
+        type="tel"
+        placeholder="(xx) xxx-xxxx"
+        id="phone"
+        name="phone"
+        required
+      />
+      <span
+        id="phone-error"
+        style="color: red; font-size: 0.8rem; display: none"
+        >Apenas números são permitidos!
+      </span>
+
+      <input type="submit" id="btnfale" value="Ligue para mim" />
+    </form>
+
+    <script src="js/contacto.script.js"></script>
+  </body>
+</html>
