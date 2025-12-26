@@ -168,3 +168,42 @@ a:hover {
 .btn-servico:hover {
   background: #a08c69;
 }
+
+/* --- ADICIONAR AO FINAL DO ARQUIVO --- */
+
+@media (max-width: 768px) {
+  .cards-container {
+    /* Reduz o padding gigante para apenas 20px nas laterais e 100px no topo */
+    padding: 100px 20px 40px 20px !important;
+  }
+
+  .cards-container h3 {
+    font-size: 24px; /* Diminui o título para caber numa linha */
+  }
+
+  .lista-menu {
+    gap: 8px;
+  }
+
+  .lista-menu a {
+    font-size: 1rem; /* Diminui o menu para não quebrar */
+  }
+
+  /* Ajuste da Galeria (Modal) no telemóvel */
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+    max-height: 90vh;
+    overflow-y: auto; /* Permite scroll se houver muitas fotos */
+  }
+
+  .galeria-grid {
+    /* Garante que as fotos fiquem em 2 colunas no telemóvel */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .galeria-grid img {
+    height: 120px; /* Fotos um pouco menores para caberem melhor */
+  }
+}
